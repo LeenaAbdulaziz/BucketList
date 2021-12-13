@@ -48,43 +48,16 @@ class BucketListViewController: UITableViewController , AddItemViewControllerDel
     
     // prepare with seque  identifier
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "Additemsegue"{
-//         let destination = segue.destination as! UINavigationController
-//
-//         let addItem = destination.topViewController as! AddItemViewController
-//
-//         addItem.delegate = self
-//        }
-//        else if segue.identifier == "Edititemseque"{
-//            let destination = segue.destination as! UINavigationController
-//
-//            let addItem = destination.topViewController as! AddItemViewController
-//
-//            addItem.delegate = self
-//            let indexPath = sender as! NSIndexPath
-//            let item = items[indexPath.row]
-//
-//            addItem.item = item
-//            addItem.indexPath = indexPath
-//        }
-//
-//
-//
-//    }
-    
-    // prepare with sender type
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if sender is UIBarButtonItem{
+        if segue.identifier == "Additemsegue"{
          let destination = segue.destination as! UINavigationController
 
          let addItem = destination.topViewController as! AddItemViewController
 
          addItem.delegate = self
         }
-        else if sender is IndexPath{
+        else if segue.identifier == "Edititemseque"{
             let destination = segue.destination as! UINavigationController
 
             let addItem = destination.topViewController as! AddItemViewController
@@ -100,6 +73,7 @@ class BucketListViewController: UITableViewController , AddItemViewControllerDel
 
 
     }
+    
     
     
     
